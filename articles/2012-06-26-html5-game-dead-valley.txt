@@ -1,0 +1,21 @@
+---
+title: HTML5 Game Dead Valley
+author: Doug McInnes
+date: 26/06/2012
+category: coding/dead-valley/games/html5/javascript-coding/projects
+tags: 
+
+<h1>GTA Style Zombie Survival in a Randomly Generated World</h1>
+I'm pleased to announce the release of my new game Dead Valley.
+
+<a title="Dead Valley" href="http://www.deadvalleygame.com">Play it!</a>
+
+It currently does not work on mobile devices, but that's coming soon!
+
+Here's a video showing gameplay:
+
+<iframe src="http://www.youtube.com/embed/DaLrtgzg6ig" frameborder="0" width="640" height="480"></iframe>
+
+I'll eventually write a post on the basics of how it works but for you buzzword compliant people here's some of the HTML5 technologies I used: Web Audio, Canvas, Gradients, CSS 3D Transforms, Local Storage, Multiple CSS Backgrounds, CSS Opacity, and Web Workers.
+
+Enjoy!

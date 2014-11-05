@@ -1,0 +1,38 @@
+---
+title: Craken
+author: Doug McInnes
+date: 14/07/2008
+category: coding/los-angeles-times/plugins
+tags: capistrano, craken, cron, development, los-angeles-times, plugin, rails, rake, ruby, software
+
+This is the first of hopefully many (a few?) Ruby on Rails plugins I've created as a developer for the <a href="http://latimes.com">Los Angeles Times</a>.
+
+This one is called Craken.  In a nutshell it manages and installs <a title="Simple ruby build program with capabilities similar to make. " href="http://rake.rubyforge.org/">rake</a>-centric <a title="Time-based scheduling service in Unix-like computer operating systems." href="http://en.wikipedia.org/wiki/Cron">cron</a> jobs.  Coupled with <a title="Tool for automating tasks on one or more remote servers." href="http://www.capify.org/">Capistrano</a> goodness it is the answer to your recurring task needs in Rails.
+
+It's up on <a title="new hotness" href="http://github.com/">GitHub</a>: <a href="http://github.com/latimes/craken/tree/master">http://github.com/latimes/craken/tree/master</a>
+
+Here's the deal: with many web applications comes the need to do recurring tasks on the servers the application runs on.  These sorts of tasks can range from running backups, clearing caches, emailing notices and other such maintenance-y things.
+
+Who manages these tasks?  Ideally the task code as well as configuration and timing should be kept with the source code of the application itself and not as part of some further set of scripts that reside in a dubious location in your source control.  This is what Craken does.
+
+The tasks are defined as rake tasks within the application.  Craken itself is a rake task that sets up a crontab for defined tasks based on your current application configuration.  The plugin also includes a Capistrano recipe that runs the Craken rake task on remote servers making deployment a breeze.
+
+Craken, by default, looks for recurring task definitions here:
+<pre>RAILS_ROOT/config/craken/crontab</pre>
+You can also define tasks for a particular machine by prefixing the machine name (separated with an underscore):
+<pre>RAILS_ROOT/config/craken/MyMachineName_crontab</pre>
+The file format is modeled after crontab:
+<pre>30 1 * * * thing:to_do</pre>
+In this case <em>thing:to_do</em> is a rake task.  It will run at 1:30 AM every morning (take a look at the <a href="http://unixnotes.wordpress.com/2006/04/14/cron-format-crontab/">crontab format</a> if this makes no sense).
+
+The command to install the cron job locally:
+<pre>% rake craken:install</pre>
+If you're using Capistrano for deployment (and you really should) a recipe is provided to run <em>craken:install</em> on remote machines.  Your Capistrano configuration needs to define a <strong>:cron</strong> role so the recipe knows which machines it should run the command on.
+<pre>% cap craken:install</pre>
+Ideally you can make craken:install part of your deployment configuration, <strong>:after_deploy</strong> would be a good place to put it.  Craken overwrites the existing configuration for the application on the machine so running it multiple times is not a problem.  Running multiple apps on the same machine or cron jobs placed by hand?  No worries, Craken delimits the lines it generates in crontab with comments and doesn't disturb existing entries.
+
+For more information about the plugin, peruse the <a href="http://github.com/latimes/craken/tree/master/README">README</a> file.
+
+If you have any questions/comments/suggestions about Craken please leave a comment!
+
+The name "Craken" generously suggested by <a href="http://gilesbowkett.blogspot.com/">Giles Bowkett</a>.

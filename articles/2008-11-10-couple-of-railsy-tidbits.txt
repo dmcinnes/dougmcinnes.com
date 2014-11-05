@@ -1,0 +1,10 @@
+---
+title: Couple of Railsy Tidbits
+author: Doug McInnes
+date: 10/11/2008
+category: coding/los-angeles-times/plugins
+tags: activerecord, admin, authentication, http-auth, rails, ruby, sql, subselection, yaml
+
+I made a post on the <a href="http://geminstallthat.wordpress.com/">Gem Install That</a> blog detailing the <a href="http://geminstallthat.wordpress.com/2008/11/07/simple_admin-met-a-pieman/">simple_admin plugin</a> which adds a simple authentication scheme to your Ruby on Rails application.  It stores usernames and passwords in a <a href="http://www.yaml.org/">YAML</a> file to make it extra easy.
+
+<a href="http://geminstallthat.wordpress.com/author/reidmix/">Reid</a> also posted on Gem Install That about another plugin we worked on, <a href="http://geminstallthat.wordpress.com/2008/11/01/subselector-moneypenny/">Subselector</a>, which extends ActiveRecord to give it subselection capibilities.

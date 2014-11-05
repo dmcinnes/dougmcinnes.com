@@ -1,0 +1,9 @@
+---
+title: Barack Obama on Religion
+author: Doug McInnes
+date: 10/02/2008
+tags: religion
+
+If you're going to see any Obama video see this one.  I thought I liked him before!
+
+<embed src="http://services.brightcove.com/services/viewer/federated_f8/353515028" bgcolor="#FFFFFF" flashvars="videoId=416343938&amp;playerId=353515028&amp;viewerSecureGatewayURL=https://services.brightcove.com/services/amfgateway&amp;servicesURL=http://services.brightcove.com/services&amp;cdnURL=http://admin.brightcove.com&amp;domain=embed&amp;autoStart=false&amp;" base="http://admin.brightcove.com" name="flashObj" seamlesstabbing="false" type="application/x-shockwave-flash" swliveconnect="true" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" height="412" width="486"></embed>

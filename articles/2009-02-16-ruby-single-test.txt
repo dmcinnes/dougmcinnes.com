@@ -1,0 +1,24 @@
+---
+title: Ruby Single Test
+author: Doug McInnes
+date: 16/02/2009
+category: coding/plugins/vim
+tags: tdd, testing, vim
+
+I, like many developers, do my best to follow the practice of <a href="http://en.wikipedia.org/wiki/Test-driven_development">Test Driven Development</a> (TDD).  In practical terms this means you write a test to test your code before you write the code itself.  This approach forces your mindset into having a clearer sense of how the code will be used since you're writing code to use the code first.  Got it?   Increased test coverage also means more robust and maintainable code.
+
+My first formal introduction to TDD was a <a href="http://pragmaticstudio.com/testing-rails/">three-day TDD workshop</a> put on by <a href="http://onestepback.org/">Jim Weirich</a> and <a href="http://objo.com/">Joe O'Brien</a> while I was at the Los Angeles Times.  Jim, an expert EMACS user, had his system setup to run tests quickly from within the editor, even showing a red or green notice indicating the pass/fail status of the test.
+
+This may not seem like a big deal to people using any number of IDEs but personally, I'm a <a href="http://www.vim.org/">Vim</a> user (specifically <a href="http://code.google.com/p/macvim/">MacVim</a>, it's an extremely well done port of Vim using Cocoa).  I love it.  I'm way faster editing inside of Vim; my brain has mapped around all of the commands because I've been editing with it for so long.  I've been using vi variants in one form or another since my Freshman year of college when my Computer Science 101 professor forced us all to code with it for our programming projects on the school's Sun server.  While doing Java work two or so years ago, I developed mostly on Eclipse and eventually broke down and purchased a license for the Eclipse vi keybinding plugin.  Now that I'm employed for Ruby work I've switched back to Vim full-time (after a 1/2 hour dabbling with Textmate).
+
+Jim's EMACS setup made me jealous.  During the class I figured out how to set the make program to use ruby (or spec for rspec tests) and <a href="http://www.vim.org/htmldoc/quickfix.html">Quickfix</a> will run the tests for the file.  Here's the command:
+<blockquote>:set makeprg=ruby\ %</blockquote>
+The <strong>\</strong> escapes the space and the <strong>%</strong> gets expanded to the current buffer's filename when Quickfix is activated.  Quickfix was originally used for a "quick" way of compiling your program to see if there's any errors.  Vim will even move your cursor to the file and line number of the first error if there are any.  This works for ruby tests too!  Another Vim setting, <strong>errorformat</strong>, is how Vim parses errors from running <strong>makeprg</strong>.
+
+OK, so this is all great, but what if my test file is huge?  What if it takes 10+ seconds to run?  What if I'm only interested in a single test because I'm being a good developer and practicing TDD?
+
+This is where the <a href="http://github.com/dmcinnes/ruby_single_test/tree/master">Ruby Single Test plugin</a> comes in.  The plugin is an extraction of some functions I've been playing with in my .vimrc file for the past couple of weeks.  All it does is provide a command for running the test block your cursor is hovering over in your test file (<strong>&lt;leader&gt;.</strong> by default.  <strong>&lt;leader&gt;</strong> is usually comma or backslash).  Most of the time you're only interested in a single test while you're editing code so turn-around time is vastly improved.  No more jumping back to the console to run a test.
+
+To install just drop the <a href="http://github.com/dmcinnes/ruby_single_test/tree/master">ruby_single_test.vim</a> file in your <strong>.vim/plugin</strong> directory.
+
+Currently it works for Test::Unit as well as Rspec tests.  I've been using this quite a bit recently and I think I've worked out most of the bugs.  My setup isn't necessarily the same any everyone's so please let me know if you have any problems with it!  The code is up on <a href="http://github.com">Github</a>, so feel free to play with it.

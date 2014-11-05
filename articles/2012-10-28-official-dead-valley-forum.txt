@@ -1,0 +1,8 @@
+---
+title: Official Dead Valley Forum
+author: Doug McInnes
+date: 28/10/2012
+category: coding/dead-valley/games/html5/javascript-coding/projects
+tags: 
+
+Just <a href="http://dogwatchgames.com/blog/official-dead-valley-forum/">posted on the Dogwatch Games blog</a> a link to the new <a href="https://groups.google.com/forum/?hl=en&amp;fromgroups#!forum/deadvalley">Official Dead Valley Forum</a>. Check it out!

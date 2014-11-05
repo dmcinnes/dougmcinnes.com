@@ -1,0 +1,136 @@
+---
+title: Javascript Love
+author: Doug McInnes
+date: 13/11/2008
+category: coding/los-angeles-times
+tags: ajax, gallery, inplaceeditor, javascript, preview, prototype, scriptaculous
+
+<script src="/wp-content/uploads/2008/11/prototype.js"></script> <script src="/wp-content/uploads/2008/11/effects.js"></script>
+<script src="/wp-content/uploads/2008/11/controls.js"></script> <script src="/wp-content/uploads/2008/11/inplace_preview.js"></script>
+<script src="/wp-content/uploads/2008/11/gallery_scroller.js"></script> I've been a busy bee releasing stuff into the wild lately.  Most of them have been Ruby on Rails plugins but I've also been doing some Javascript work.  Here's two tidbits that I developed at the <a href="http://www.latimes.com/">Los Angeles Times</a>.
+<h4>Inplace_preview</h4>
+<a href="http://github.com/latimes/inplace_preview/tree/master">Inplace_preview</a> is the first.  It monkeypatches <a href="http://script.aculo.us/">Scriptaculous</a>' <a href="http://github.com/madrobby/scriptaculous/wikis/ajax-inplaceeditor">InPlaceEditor</a> to give it a preview mode.  It also includes an ability to do an ajax call for rendering the preview.  It comes in handy when using an InPlaceEditor for editing HTML but with the ajax rendering anything would be possible.
+
+Here's an example (if you save you'll get a big-ol error since we don't actually save here):
+
+<span id="preview-test" style="margin-left:15px;" title="Click to edit"><strong>Click Here to Edit...</strong></span> <script type="text/javascript"><!--
+new Ajax.InPlaceEditor('preview-test', '/update', { rows: 15, previewLink: true, cols: 35, okText: 'Save', cancelText: ' Cancel'} )
+// --></script>
+<h4>Gallery_scroller</h4>
+<a href="http://github.com/latimes/gallery_scroller/tree/master">Gallery_scroller</a> is small Javascript library for creating a scrolling gallery that we're using on more projects then I expected.  It requires <a href="http://www.prototypejs.org/">Prototype</a> and <a href="http://script.aculo.us/">Scriptaculous</a> <a href="http://github.com/madrobby/scriptaculous/wikis/effects">effects.js</a> libraries.
+
+Here's an example:
+<div id="gst"><style>
+#gst div.gallery { height: 150px; padding-right:16px; text-align:left; float:left; margin-right:10px; }
+#gst div.gallery img, li.highlight img { border:2px solid #d0d0c4; }
+#gst div.gallery div { width: 140px; }
+#gst #gallery_container { position:relative; padding:10px; height:150px; width:540px; }
+#gst a.gallery_textlink { font-weight:bold; font-size:110%; }
+#gst #gallery_mask { position:relative; height:180px; width:540px; overflow:hidden; clear:left; border:2px black solid; margin-top:10px;}
+#gst #gallery_buttons { width:39px; margin-top:2ex; }
+#gst #gallery_previous { width: 19px; height: 19px; float:left; background:url(/wp-content/uploads/2008/11/arrow-left-disabled.gif); border-right: 1px #ddd solid; }
+#gst #gallery_next { width: 19px; height: 19px; float:right; background:url(/wp-content/uploads/2008/11/arrow-right-disabled.gif); }
+#gst #gallery_previous.active { cursor:pointer; background:url(/wp-content/uploads/2008/11/arrow-left.gif); }
+#gst #gallery_next.active { cursor:pointer; background:url(/wp-content/uploads/2008/11/arrow-right.gif); }
+</style>
+
+<div id="gallery_buttons">
+  <span id="gallery_previous"></span>
+  <span id="gallery_next"></span>
+</div>
+<div id="gallery_mask">
+<div id="gallery_container">
+<div id="gallery_2178" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=3041243&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/1037874128.jpg" alt="10-18 (AP) Democratic presidential nominee Sen. Barack Obama says his Republican opponent Sen. John McCain will give tax breaks to the wealthy, a group he says already make out like 'bandits,' some literally on Wall Street." height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=3041243&amp;topVideoCatNo=71782">Barack Obama says John McCain will...</a></div>
+</div>
+<div id="gallery_2183" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=3042708&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/114494528.jpg" alt="10-19 (AP) Speaking in Fayetteville, North Carolina Sunday, Democratic presidential candidate Barack Obama said he was honored to hear the news that former Secretary of State Colin Powell was endorsing him for president." height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=3042708&amp;topVideoCatNo=71782">Barack Obama praises Colin Powell</a></div>
+</div>
+<div id="gallery_1868" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2854101&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/138133817.jpg" alt="2854101_vk" height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2854101&amp;topVideoCatNo=71782">Barack Obama accepts the...</a></div>
+</div>
+<div id="gallery_1546" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2649745&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/199373581.jpg" alt="7-2 (CNN) Barack Obama is trying to prove that faith-based politics isn't reserved for Republicans. In fact, the Democrat now is taking a page from President Bush's playbook. Jessica Yellin has more on Obama's version of the president's faith-based initiative." height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2649745&amp;topVideoCatNo=71782">Barack Obama's faith-based...</a></div>
+</div>
+<div id="gallery_1817" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2837083&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/219916731.jpg" alt="8-25 (AP) Democratic presidential candidate Barack Obama was campaigning in Wisconsin Sunday, one day after announcing Delaware Senator Joseph Biden as his running-mate." height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2837083&amp;topVideoCatNo=71782">Barack Obama campaigns in Wisconsin</a></div>
+</div>
+<div id="gallery_1321" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2560121&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/315428173.jpg" alt="6-5 (CNN) If you look at where the poll numbers were just last fall, Barack Obama's success is nothing short of amazing. So how did he beat the Clintons' formidable political machine? Brian Todd has the answer. " height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2560121&amp;topVideoCatNo=71782">What went right for Barack Obama</a></div>
+</div>
+<div id="gallery_1578" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2681117&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/404079547.jpg" alt="7-11 (CNN) Senator Barack Obama did something that critics say puts him closer to President Bush. It involves Obama's vote on legislation meant to help protect Americans, but that some people say puts Americans' telephone and e-mail privacy at risk. Now, some liberals are not happy with Obama. Ed Henry has details." height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2681117&amp;topVideoCatNo=71782">Barack Obama criticized for...</a></div>
+</div>
+<div id="gallery_1845" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2849055&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/412984206.jpg" alt="2849055_vk" height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2849055&amp;topVideoCatNo=71782">Barack Obama officially becomes...</a></div>
+</div>
+<div id="gallery_1849" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2850109&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/436474808.jpg" alt="2850109_vk" height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2850109&amp;topVideoCatNo=71782">Barack Obama joins Joe Biden at...</a></div>
+</div>
+<div id="gallery_1850" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2848786&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/551163595.jpg" alt="8-27 (DNC) Barack Obama's name will appear on ballots across the nation in November. Delegates attending the Democratic National Convention in Denver have nominated Obama for president, the first black American to bare the presidential nomination of a major party." height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2848786&amp;topVideoCatNo=71782">Democrats nominate Barack Obama</a></div>
+</div>
+<div id="gallery_1596" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2693319&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/621738199.jpg" alt="7-15 (CNN) Barack Obama tells the NAACP African Americans must take more responsibility for their own lives. Sabrina Fang has more from the White House." height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2693319&amp;topVideoCatNo=71782">Barack Obama addresses the NAACP</a></div>
+</div>
+<div id="gallery_1597" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2692745&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/696565248.jpg" alt="7-15 (CNN) Senator Barack Obama continues his message of personal responsibility. The Democratic presidential candidate addressed the NAACP in Cincinnati." height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2692745&amp;topVideoCatNo=71782">Barack Obama on personal...</a></div>
+</div>
+<div id="gallery_1860" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2852390&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/731932852.jpg" alt="2852390_vk" height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2852390&amp;topVideoCatNo=71782">Preparations underway for Barack...</a></div>
+</div>
+<div id="gallery_1871" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2854549&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/865386836.jpg" alt="2854549_vk" height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2854549&amp;topVideoCatNo=71782">Barack Obama promises tax cut if...</a></div>
+</div>
+<div id="gallery_1873" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2854526&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/107196.jpg" alt="2854526_vk" height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2854526&amp;topVideoCatNo=71782">Barack Obama accepts Democratic...</a></div>
+</div>
+<div id="gallery_1886" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2863331&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/34994920-31172605.jpg" alt="2863331_vk" height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2863331&amp;topVideoCatNo=71782">Barack Obama condemns rumors...</a></div>
+</div>
+<div id="gallery_1887" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2863387&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/35059740-31144425.jpg" alt="2863387_vk" height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2863387&amp;topVideoCatNo=71782">Barack Obama and John McCain urge...</a></div>
+</div>
+<div id="gallery_1680" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2742638&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/35256668-05135124.jpg" alt="7-29 (CNN) Breaking up is hard to do, especially if it's a presidential candidate you're breaking up with. They love him, they love him not. We're talking about the media and Barack Obama. Jeanne Moos reports that those in the press who follow him most closely aren't feeling all that close these days." height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2742638&amp;topVideoCatNo=71782">Barack Obama's relationship with...</a></div>
+</div>
+<div id="gallery_1175" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2477916&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/384707563.jpg" alt="2477916_vk" height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2477916&amp;topVideoCatNo=71782">Barack Obama</a></div>
+</div>
+<div id="gallery_1451" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/news/politics/la-ca-0622-presidents-pg,0,3704732.photogallery?track=rss"><img src="/wp-content/uploads/2008/11/40099116-17162042.jpg" alt="Barack Obama Photos" height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/news/politics/la-ca-0622-presidents-pg,0,3704732.photogallery?track=rss">Before Barack Obama: Alternative...</a></div>
+</div>
+<div id="gallery_1470" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2615428&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/45171987.jpg" alt="2615428_vk" height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2615428&amp;topVideoCatNo=71782">Barack Obama's funding advantage...</a></div>
+</div>
+<div id="gallery_1486" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2621995&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/460582403.jpg" alt="6-24 (CNN) One of Senator Barack Obama's latest P.R. moves involves a look-alike presidential seal that definitely didn't get the official seal of approval. Jeanne Moos takes a look." height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2621995&amp;topVideoCatNo=71782">Barack Obama's seal controversy</a></div>
+</div>
+<div id="gallery_1487" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2621983&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/507846466.jpg" alt="6-24 (CNN) Once enemies, they're now joining forces. Democrats Barack Obama and Hillary Clinton are preparing for a rally in the aptly named Unity, New Hampshire. Candy Crowley has more." height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2621983&amp;topVideoCatNo=71782">Barack Obama and Hillary Clinton...</a></div>
+</div>
+<div id="gallery_1490" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2622008&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/580571534.jpg" alt="6-24 (CNN) One of Senator Barack Obama's latest public relations moves involves a look-alike presidential seal that definitely didn't get the official seal of approval. Jeanne Moos takes a look." height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2622008&amp;topVideoCatNo=71782">Barack Obama and Muslim voters</a></div>
+</div>
+<div id="gallery_1495" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2626176&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/795300114.jpg" alt="6/25 (CNN) Friday, two former primary rivals will come together for one cause, putting Senator Obama in the White House. Hillary Clinton and Barack Obama make their first joint campaign appearance Friday in Unity, New Hampshire. Today, Obama praised Senator Clinton and talked about what their hard-fought primary did to her political status." height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2626176&amp;topVideoCatNo=71782">Barack Obama on Hillary Clinton</a></div>
+</div>
+<div id="gallery_1514" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/video/?clipId=2634673&amp;topVideoCatNo=71782"><img src="/wp-content/uploads/2008/11/861529769.jpg" alt="6-27 (CNN) Barack Obama says contrary to what some comedians are saying, he and actress Scarlett Johansson hardly know each other -- which makes their so-called &quot;break up&quot; most unusual. Jeanne Moos reports." height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/video/?clipId=2634673&amp;topVideoCatNo=71782">Barack Obama and Scarlett Johansson</a></div>
+</div>
+<div id="gallery_515" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/entertainment/news/la-et-popcandidates-pg,1,3609591.photogallery?track=rss"><img src="/wp-content/uploads/2008/11/867966830.jpg" alt="Barack Obama Photos" height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/entertainment/news/la-et-popcandidates-pg,1,3609591.photogallery?track=rss">Pop culture candidates</a></div>
+</div>
+<div id="gallery_519" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/la-na-demdebate-pg,0,9946.photogallery?track=rss"><img src="/wp-content/uploads/2008/11/899943488.jpg" alt="Barack Obama Photos" height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/la-na-demdebate-pg,0,9946.photogallery?track=rss">Democratic debate</a></div>
+</div>
+<div id="gallery_534" class="gallery_scroll_unit gallery"><a href="http://www.latimes.com/la-super_tuesday08_nation-pg,0,4952159.photogallery?track=rss"><img src="/wp-content/uploads/2008/11/906115334.jpg" alt="Barack Obama Photos" height="110" /></a> 
+<div><a class="gallery_textlink" href="http://www.latimes.com/la-super_tuesday08_nation-pg,0,4952159.photogallery?track=rss">Super Tuesday: Nation</a></div>
+</div>
+</div>
+</div>
+<script type="text/javascript"><!--
+  //<![CDATA[
+new GalleryScroller('gallery_container', 'gallery_previous', 'gallery_next')
+// --></script></div>
+The documentation on both of these goes into detail on how they work, so check out their <a href="http://github.com/latimes/inplace_preview/tree/master">github</a> <a href="http://github.com/latimes/gallery_scroller/tree/master">sites</a>!

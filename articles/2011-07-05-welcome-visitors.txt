@@ -1,0 +1,25 @@
+---
+title: Welcome Visitors
+author: Doug McInnes
+date: 05/07/2011
+category: blog/games
+tags: 
+
+When I released my <a href="http://dougmcinnes.com/2010/05/12/html-5-asteroids/">HTML 5 Asteroids Clone</a> last year it got a fair number of hits as the link was passed around the Twitters and random blog postings. Soon the hits dropped off and traffic normalized to slightly higher than before, still mostly from various blogs.
+[caption id="attachment_190" align="alignnone" width="683" caption="The traffic spike from the release of HTML 5 Asteroids"]<a href="http://dougmcinnes.com/wp-content/uploads/2011/07/Screen-shot-2011-07-02-at-11.46.06-PM.png"><img src="http://dougmcinnes.com/wp-content/uploads/2011/07/Screen-shot-2011-07-02-at-11.46.06-PM.png" alt="WHOA TRAFFIC" title="asteroids release traffic spike" width="683" height="270" class="size-full wp-image-190" /></a>[/caption]
+Lately I have been receiving some spikes in traffic directly to the HTML 5 Asteroids game almost all of which had no referrer. It was a puzzle -- up till now most of my traffic had come from a specific source but these visitors were coming directly to my site, from a bookmark, or just typing in the URL.
+At first I just shrugged it off, I figured some people had bookmarked the game and played it occasionally. Still the traffic kept coming, only abating on the weekends, and I couldn't think I'd get that many hits from people casually playing from bookmarks. The Wordpress stats package wasn't giving me much beyond the plain quantity of traffic.
+Finally I installed Google Analytics. I had never used it before but I figured it may give me more insight to where this traffic was coming from. It would at least tell me what kind of browser they were using.
+So I waited a few days for it to pull some data in. This is what I saw:
+
+[caption id="attachment_192" align="alignnone" width="590" caption="Internet Explorer? IE doesn&#039;t support the canvas element. The game is unplayable on IE!"]<a href="http://dougmcinnes.com/wp-content/uploads/2011/07/Screen-shot-2011-07-02-at-11.36.49-PM.png"><img src="http://dougmcinnes.com/wp-content/uploads/2011/07/Screen-shot-2011-07-02-at-11.36.49-PM.png" alt="" title="Internet Explorer?" width="590" height="223" class="size-full wp-image-192" /></a>[/caption]
+[caption id="attachment_193" align="alignnone" width="661" caption="Almost all the traffic is from Washington State?"]<a href="http://dougmcinnes.com/wp-content/uploads/2011/07/Screen-shot-2011-07-02-at-11.37.46-PM.png"><img src="http://dougmcinnes.com/wp-content/uploads/2011/07/Screen-shot-2011-07-02-at-11.37.46-PM.png" alt="Almost all the traffic is from Washington State" title="Washington State?" width="661" height="365" class="size-full wp-image-193" /></a>[/caption]
+[caption id="attachment_194" align="alignnone" width="657" caption="Seattle?"]<a href="http://dougmcinnes.com/wp-content/uploads/2011/07/Screen-shot-2011-07-02-at-11.58.49-PM.png"><img src="http://dougmcinnes.com/wp-content/uploads/2011/07/Screen-shot-2011-07-02-at-11.58.49-PM.png" alt="Traffic only from Seattle" title="Seattle?" width="657" height="369" class="size-full wp-image-194" /></a>[/caption]
+[caption id="attachment_195" align="alignnone" width="592" caption="Microsoft Corp?!"]<a href="http://dougmcinnes.com/wp-content/uploads/2011/07/Screen-shot-2011-07-02-at-11.39.05-PM.png"><img src="http://dougmcinnes.com/wp-content/uploads/2011/07/Screen-shot-2011-07-02-at-11.39.05-PM.png" alt="All the traffic is from Microsoft Corp" title="Microsoft Corp?!" width="592" height="144" class="size-full wp-image-195" /></a>[/caption]
+[caption id="attachment_196" align="alignnone" width="591" caption="IE 10!"]<a href="http://dougmcinnes.com/wp-content/uploads/2011/07/Screen-shot-2011-07-02-at-11.37.21-PM.png"><img src="http://dougmcinnes.com/wp-content/uploads/2011/07/Screen-shot-2011-07-02-at-11.37.21-PM.png" alt="All the traffic is from IE 10" title="IE 10!" width="591" height="135" class="size-full wp-image-196" /></a>[/caption]
+
+<em>Microsoft Engineers are using my HTML 5 Asteroids game to test IE 10's new canvas element</em>.
+
+There isn't much to say but: Awesome!
+
+Welcome Microsoft Engineers! Thank you for playing my game!

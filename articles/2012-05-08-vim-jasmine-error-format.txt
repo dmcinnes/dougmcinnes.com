@@ -1,0 +1,11 @@
+---
+title: Vim Jasmine Error Format
+author: Doug McInnes
+date: 08/05/2012
+category: coding/javascript-coding/vim
+tags: 
+
+I couldn't find an acceptable <a href="http://www.vim.org/">Vim</a> <a href="http://vimdoc.sourceforge.net/htmldoc/quickfix.html#errorformat">errorformat</a> for when running <a href="http://pivotal.github.com/jasmine/">Jasmine</a> tests with <a href="http://vimdoc.sourceforge.net/htmldoc/quickfix.html">quickfix</a> (specifically using Jasmine's ConsoleReporter), so I made my own.
+
+If any of that made sense this may be of some use to you :)
+<pre>set errorformat=%E\ \ %.%#Error:%m,%-G%.%#/jasmine.js:%.%#,%C\ %#at\ %.%#\ (%f:%l:%c)</pre>

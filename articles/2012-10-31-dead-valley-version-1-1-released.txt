@@ -1,0 +1,14 @@
+---
+title: Dead Valley Version 1.1 Released!
+author: Doug McInnes
+date: 31/10/2012
+category: coding/dead-valley/games/html5/javascript-coding
+tags: 
+
+Mostly a bugfix release.
+
+See the Dogwatch Games blog post for details:
+
+<a href="http://dogwatchgames.com/blog/dead-valley-version-1.1-released/">http://dogwatchgames.com/blog/dead-valley-version-1.1-released/</a>
+
+Happy Halloween!

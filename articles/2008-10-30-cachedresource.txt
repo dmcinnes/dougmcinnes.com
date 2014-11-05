@@ -1,0 +1,30 @@
+---
+title: cached_resource
+author: Doug McInnes
+date: 30/10/2008
+category: coding/los-angeles-times/plugins
+tags: 
+
+Another Ruby on Rails plugin that I've developed at the <a href="http://latimes.com/">Los Angeles Times</a> is <a href="http://github.com/latimes/cached_resource/tree/master">cached_resource</a>.
+
+In a nutshell cached_resource automagically caches <a href="http://api.rubyonrails.org/classes/ActiveResource/Base.html">ActiveResource</a> response objects in a <a href="http://www.danga.com/memcached/">memcached</a> instance.  The plugin requires <a href="http://github.com/defunkt/cache_fu/tree/master">cache_fu</a> for memcached configuration goodness.  See also: <a href="http://errtheblog.com/posts/57-kickin-ass-w-cachefu">Kickin' ass with cache-fu</a>.
+
+The code for cached_resource is also up on <a href="http://github.com/">GitHub</a> along with a many other Los Angeles Times plugins and other tidbits.  You can find it here: <a href="http://github.com/latimes/cached_resource/tree/master">http://github.com/latimes/cached_resource/tree/master</a>
+
+So, how do you get it to work?  After dropping the plugins in <strong>vendor/plugins</strong>, set up your cache_fu configuration then drop this single line in any of your ActiveResource models:
+<pre>class MyClass &lt; ActiveResource::Base
+  <strong>cached_resource</strong>
+end</pre>
+The cached_resource call also takes normal cache_fu options:
+<pre>class MyClass &lt; ActiveResource::Base
+  <strong>cached_resource :ttl =&gt; 15.minutes</strong>
+end</pre>
+So now every time you run a <strong>.find()</strong> on <strong>MyClass</strong> the results will be cached for the next time you do the same kind of find.  The cache key is the URI of the ActiveRecord generated REST query.
+
+In addition, if you do <strong>MyClass.find(:all)</strong> or the like to get a list of resources, individual instances in the returned list will be cached separately and the list itself will be distilled down to IDs before it's stuffed in its own cache bucket.  When pulled from the cache the list will be reconstituted by pulling the individual objects from the cache by ID or making additional ActiveResource queries to get objects that have fallen out for one reason or another. The upshot of this is you'll have less of a chance of stale data between mixed finds.
+
+The cached_resource plugin makes some assumptions about how your REST service is set up.  If the REST service you're pointing to with ActiveResource are wacky, i.e. not conforming to exactly what ActiveResource expects its URLs to be, this plugin will probably not work for you.  That said, if you can do normal finds with IDs, like <strong>MyClass.find(123)</strong>, you'll probably be fine.
+
+This plugin was written before <a href="http://thewebfellas.com/blog/2008/6/9/rails-2-1-now-with-better-integrated-caching">memcached support was baked into Rails 2.1</a> so if anyone wants to fork and get it working please be my guest!  I'll be happy to pull it back in :)
+
+Credit where credit is due: <a href="http://kleinptr.wordpress.com/">Josh Kleinpeter</a> originally came up with the cached_resource concept and Subba Rao helped to lay the groundwork.

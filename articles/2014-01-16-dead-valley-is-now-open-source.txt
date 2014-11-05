@@ -1,0 +1,12 @@
+---
+title: Dead Valley is now Open Source
+author: Doug McInnes
+date: 16/01/2014
+category: coding/dead-valley/games/html5/javascript-coding
+tags: 
+
+Get it while it's hot...
+
+<strong><a title="Dead Valley on Github" href="https://github.com/dmcinnes/dead-valley">https://github.com/dmcinnes/dead-valley</a></strong>
+
+Released under <a href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial</a> License
