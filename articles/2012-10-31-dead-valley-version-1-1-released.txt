@@ -3,6 +3,7 @@ title: Dead Valley Version 1.1 Released!
 author: Doug McInnes
 date: 31/10/2012
 category: coding/dead-valley/games/html5/javascript-coding
+slug: dead-valley-version-1-1-released
 tags: 
 
 Mostly a bugfix release.
