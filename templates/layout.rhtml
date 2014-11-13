@@ -3,12 +3,17 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="alternate" type="application/atom+xml" title="<%= title %> - feed" href="/index.xml" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title><%= title %></title>
   </head>
   <body>
+    <header>
+      <div class="menu">
+        <a href="/archives">Archives</a> &bull; <a href="http://github.com/dmcinnes">Github</a> &bull; <a href="/about">About</a>
+      </div>
+    </header>
     <section>
-      <%= yield %> 
+      <%= yield %>
     </section>
     <footer>
       powered by <a href="http://cloudhead.io/toto">toto</a>
