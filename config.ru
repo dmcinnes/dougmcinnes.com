@@ -2,6 +2,7 @@ require 'bundler'
 Bundler.setup
 
 require 'toto'
+require 'haml'
 
 # Rack config
 use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico'], :root => 'public'
@@ -35,6 +36,10 @@ toto = Toto::Server.new do
   set :disqus, 'dougmcinnes'
 
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
+
+  set :to_html, lambda {|path, page, ctx|
+    ::Haml::Engine.new(File.read("#{path}/#{page}.haml"), :format => :html5, :ugly => true).render(ctx)
+  }
 end
 
 run toto

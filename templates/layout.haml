@@ -1,0 +1,27 @@
+<!doctype html>
+%html
+  %head
+    %meta{:charset => "utf-8"}
+      %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+        %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+          / <link rel="stylesheet" type="text/css" href="/css/main.css">
+          / <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+          %link{:href => "//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/readable/bootstrap.min.css", :rel => "stylesheet"}
+            %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", :rel => "stylesheet"}
+              %link{:href => "/index.xml", :rel => "alternate", :title => "#{title} - feed", :type => "application/atom+xml"}/
+              %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+              %title= title
+  %body
+    %header
+      %h1 Doug McInnes
+      .menu
+        %a{:href => "/archives"} Archives
+        \&bull;
+        %a{:href => "http://github.com/dmcinnes"} Github
+        \&bull;
+        %a{:href => "/about"} About
+    %section
+      = yield
+    %footer
+      powered by
+      %a{:href => "http://cloudhead.io/toto"} toto

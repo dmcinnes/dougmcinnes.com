@@ -2,8 +2,11 @@ GEM
   remote: http://rubygems.org/
   specs:
     builder (3.2.2)
+    haml (4.0.5)
+      tilt
     rack (1.5.2)
     rdiscount (2.1.7.1)
+    tilt (1.4.1)
     toto (0.4.9)
       builder
       rack
@@ -14,5 +17,6 @@ PLATFORMS
 
 DEPENDENCIES
   builder
+  haml
   rdiscount
   toto
