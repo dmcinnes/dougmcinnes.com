@@ -12,16 +12,22 @@
               %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
               %title= title
   %body
-    %header
-      %h1 Doug McInnes
-      .menu
-        %a{:href => "/archives"} Archives
-        \&bull;
-        %a{:href => "http://github.com/dmcinnes"} Github
-        \&bull;
-        %a{:href => "/about"} About
-    %section
-      = yield
+    .container
+      %header.container
+        %h1 Doug McInnes
+        .menu
+          %a{:href => "/archives"} Archives
+          \&bull;
+          %a.fa.fa-2x.fa-github{:href => "http://github.com/dmcinnes"}
+          \&bull;
+          %a.fa.fa-2x.fa-twitter{:href => "http://twitter.com/DougMcInnes"}
+          \&bull;
+          %a{:href => "/about"} About
+
+      .row
+        .col-sm-8
+          = yield
+
     %footer
       powered by
       %a{:href => "http://cloudhead.io/toto"} toto
