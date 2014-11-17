@@ -1,6 +1,23 @@
-%h1= @path
-%ul
-  - if archives.length > 0
-    - for entry in archives
+-# %h1= @path
+-# %ul
+-#   - if archives.length > 0
+-#     - for entry in archives
+-#       %li
+-#         %a{:href => entry.path}= entry.title
+%section#articles
+  - for article in archives[0...3]
+    %article.post
+      %header
+        %h3
+          %a{:href => article.path}= article.title
+        %span.date= article.date
+      %section.content
+        = article.summary
+      .more
+        %a{:href => "#{article.path}#disqus_thread"} 0 Comments &raquo;
+
+%section#archives
+  %ul.list-unstyled
+    - archives[3..-1].each do |entry|
       %li
         %a{:href => entry.path}= entry.title

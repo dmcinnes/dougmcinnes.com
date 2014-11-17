@@ -14,20 +14,11 @@
   %body
     .container
       %header.container
-        %h1 Doug McInnes
-        .menu
-          %a{:href => "/archives"} Archives
-          \&bull;
-          %a.fa.fa-2x.fa-github{:href => "http://github.com/dmcinnes"}
-          \&bull;
-          %a.fa.fa-2x.fa-twitter{:href => "http://twitter.com/DougMcInnes"}
-          \&bull;
-          %a{:href => "/about"} About
+        %h1
+          %a{:href => "/"} Doug McInnes
 
       .row
         .col-sm-8
           = yield
 
     %footer
-      powered by
-      %a{:href => "http://cloudhead.io/toto"} toto

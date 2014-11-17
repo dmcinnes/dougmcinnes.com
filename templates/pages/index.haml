@@ -1,13 +1,12 @@
-%section#articles
-  - for article in articles[0...3]
-    %article.post
-      %header
-        %h3
-          %a{:href => article.path}= article.title
-        %span.date= article.date
-      %section.content
-        = article.summary
-      .more
-        %a{:href => "#{article.path}#disqus_thread"} 0 Comments &raquo;
-%section#archives
-  = archives[3..-1]
+.container-fluid
+  %ul.list-unstyled
+    %li
+      %a.fa.fa-2x.fa-github{:href => "http://github.com/dmcinnes"}
+    %li
+      %a.fa.fa-2x.fa-twitter{:href => "http://twitter.com/DougMcInnes"}
+    %li
+      %a.fa.fa-2x.fa-envelope{:href => "mailto:doug@dougmcinnes.com"}
+    %li
+      %a{:href => "/archives"} Blog
+    %li
+      %a{:href => "/about"} About
