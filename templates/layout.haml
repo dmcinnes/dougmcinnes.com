@@ -2,21 +2,27 @@
 %html
   %head
     %meta{:charset => "utf-8"}
-      %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
-        %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
-          / <link rel="stylesheet" type="text/css" href="/css/main.css">
-          / <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-          %link{:href => "//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/readable/bootstrap.min.css", :rel => "stylesheet"}
-            %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", :rel => "stylesheet"}
-              %link{:href => "/index.xml", :rel => "alternate", :title => "#{title} - feed", :type => "application/atom+xml"}/
-              %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-              %title= title
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %link{:href => "//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/readable/bootstrap.min.css", :rel => "stylesheet"}
+    %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", :rel => "stylesheet"}
+    %link{:href => "/css/main.css", :rel => "stylesheet"}
+    %link{:href => "/index.xml", :rel => "alternate", :title => "#{title} - feed", :type => "application/atom+xml"}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %title= title
   %body
-    .container
-      %header.container
-        %h1
-          %a{:href => "/"} Doug McInnes
+    %header.container.page-header
+      %h1
+        %a{:href => "/"} Doug McInnes
 
+      .container
+        %a.fa.fa-2x.fa-github{:href => "http://github.com/dmcinnes", :title => "Github"}
+        %a.fa.fa-2x.fa-twitter{:href => "http://twitter.com/DougMcInnes", :title => "Twitter"}
+        %a.fa.fa-2x.fa-at{:href => "mailto:doug@dougmcinnes.com", :title => "Email"}
+        %a.fa.fa-2x.fa-exclamation-circle{:href => "/archives", :title => "Blog"}
+        %a.fa.fa-2x.fa-question-circle{:href => "/about", :title => "About"}
+
+    %section.container
       .row
         .col-sm-8
           = yield
