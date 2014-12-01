@@ -1,7 +1,10 @@
+$: << File.expand_path('../lib', __FILE__)
+
 require 'bundler'
 Bundler.setup
 
 require 'toto'
+require 'toto-ext'
 require 'haml'
 
 # Rack config
@@ -43,5 +46,3 @@ toto = Toto::Server.new do
 end
 
 run toto
-
-
