@@ -10,21 +10,22 @@
     %link{:href => "/index.xml", :rel => "alternate", :title => "#{title} - feed", :type => "application/atom+xml"}
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title= title
-  %body
-    %header.container.page-header
-      %h1
-        %a{:href => "/"} Doug McInnes
-
+  %body{:class => @path}
+    %header.container-fluid.page-header
       .container
-        %a.fa.fa-2x.fa-github{:href => "http://github.com/dmcinnes", :title => "Github"}
-        %a.fa.fa-2x.fa-twitter{:href => "http://twitter.com/DougMcInnes", :title => "Twitter"}
-        %a.fa.fa-2x.fa-at{:href => "mailto:doug@dougmcinnes.com", :title => "Email"}
-        %a.fa.fa-2x.fa-exclamation-circle{:href => "/blog", :title => "Blog"}
-        %a.fa.fa-2x.fa-question-circle{:href => "/about", :title => "About"}
+        .row.col-md-8.col-md-offset-1
+          %h1
+            %a{:href => "/"} Doug McInnes
 
-    %section.container
-      .row
-        .col-sm-8
-          = yield
+          .icons
+            %a.fa.fa-2x.fa-github{:href => "http://github.com/dmcinnes", :title => "Github"}
+            %a.fa.fa-2x.fa-twitter{:href => "http://twitter.com/DougMcInnes", :title => "Twitter"}
+            %a.fa.fa-2x.fa-at{:href => "mailto:doug@dougmcinnes.com", :title => "Email"}
+            %a.fa.fa-2x.fa-exclamation-circle{:href => "/blog", :title => "Blog"}
+            %a.fa.fa-2x.fa-question-circle{:href => "/about", :title => "About"}
+
+    %section.container.content
+      .row.col-md-8.col-md-offset-1
+        = yield
 
     %footer
