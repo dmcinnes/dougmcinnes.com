@@ -5,10 +5,10 @@ date: 26/06/2012
 category: coding/dead-valley/games/html5/javascript-coding/projects
 tags: 
 
-<h1>GTA Style Zombie Survival in a Randomly Generated World</h1>
+<h4>GTA Style Zombie Survival in a Randomly Generated World</h4>
 I'm pleased to announce the release of my new game Dead Valley.
 
-<a title="Dead Valley" href="http://www.deadvalleygame.com">Play it!</a>
+<h4><a title="Dead Valley" href="http://www.deadvalleygame.com">Play it!</a></h4>
 
 It currently does not work on mobile devices, but that's coming soon!
 

@@ -63,3 +63,11 @@ article section.comments {
 footer {
   padding: 3ex;
 }
+
+figure {
+  margin: 4ex;
+}
+
+figure figcaption {
+  margin-top: 1ex;
+}
