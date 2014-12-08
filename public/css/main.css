@@ -26,18 +26,34 @@ a:hover {
   margin-bottom: 40px;
 }
 
-body.blog .main-content {
+.main-content {
   padding-top: 5ex;
   padding-bottom: 5ex;
   background-color: #EEE;
+}
+
+body.index .main-content {
+  display: none;
 }
 
 article {
   margin-bottom: 8ex;
 }
 
-article .content {
+article section.content {
   margin-top: 2ex;
+}
+
+article section.content a {
+  color: #944;
+}
+
+article section.content a:hover {
+  color: #888;
+}
+
+article section.comments {
+  margin-top: 5ex;
 }
 
 .date {
