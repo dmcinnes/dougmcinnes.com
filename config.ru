@@ -37,6 +37,7 @@ toto = Toto::Server.new do
   set :title,  'Doug McInnes'
   set :url,    'http://dougmcinnes.com'
   set :disqus, 'dougmcinnes'
+  set :cache,  28800
 
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
 
