@@ -44,11 +44,11 @@ article section.content {
   margin-top: 2ex;
 }
 
-article section.content a {
+section.content a {
   color: #944;
 }
 
-article section.content a:hover {
+section.content a:hover {
   color: #888;
 }
 
