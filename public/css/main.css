@@ -21,12 +21,29 @@ a:hover {
 
 .page-header {
   border: none;
-  background-color: rgba(238,238,238,0.5);
+  background-color: rgba(238,238,238,0.6);
   padding-bottom: 3ex;
   margin-bottom: 40px;
 }
 
-body.blog .content {
+body.blog .main-content {
   padding-top: 5ex;
+  padding-bottom: 5ex;
   background-color: #EEE;
+}
+
+article {
+  margin-bottom: 8ex;
+}
+
+article .content {
+  margin-top: 2ex;
+}
+
+.date {
+  font-size: 0.9em;
+}
+
+footer {
+  padding: 3ex;
 }

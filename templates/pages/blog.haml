@@ -20,4 +20,5 @@
   %ul.list-unstyled
     - archives[3..-1].each do |entry|
       %li
-        %a{:href => entry.path}= entry.title
+        %h5
+          %a{:href => entry.path}= entry.title
