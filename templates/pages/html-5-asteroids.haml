@@ -1,0 +1,48 @@
+%section.content
+  :css
+    #canvas { border:1px solid black; top:0px; left:0px; }
+    .button { position:absolute; border:1px solid black; }
+    #left-controls { position:absolute; left:1px; bottom:0px; display:none; }
+    #right-controls { position:absolute; right:1px; bottom:0px; display:none; }
+    #up { width:200px; height:100px; bottom:100px;}
+    #left { width:100px; height:100px; bottom:0px;}
+    #right { width:100px; height:100px; bottom:0px; left:100px; }
+    #space { width:200px; height:200px; bottom:0px; right:0px; }
+
+  %script{:src => "/javascript/html5-asteroids/jquery-1.4.1.min.js"}
+  %script{:src => "/javascript/html5-asteroids/vector_battle_regular.typeface.js"}
+  %script{:src => "/javascript/html5-asteroids/ipad.js"}
+  %script{:src => "/javascript/html5-asteroids/game.js"}
+
+  #game-container{:style => "width:800px;"}
+    %canvas#canvas{:height => "540", :style => "border:1px solid black;", :width => "780"}
+    #left-controls
+      #up.button THRUST
+      #left.button LEFT
+      #right.button RIGHT
+    #right-controls
+      #space.button FIRE
+  %p
+    Press
+    %strong Space
+    to fire, the
+    %strong ←
+    and
+    %strong →
+    arrow keys to turn, and the
+    %strong ↑
+    arrow key to thrust.
+  %p
+    Press
+    %strong P
+    to pause,
+    %strong F
+    to toggle the framerate display and hold down
+    %strong G
+    to see a demonstration of the Grid System.
+  %p
+    Suggested browsers: Safari, Chrome, Firefox and Opera.
+    %br/
+    This game will NOT work in IE because it doesn’t support the canvas element.
+  %h5
+    %a{:href => "/2010/05/12/html-5-asteroids/"} More Info About this Game
