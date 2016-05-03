@@ -1,6 +1,7 @@
 ---
 title: Dungeon of D
 date: 02/05/2016
+category: coding/games/html5/javascript-coding/card-games
 
 As a recent side project I've built an [HTML5 version of Dungeon of D](http://dod.dogwatchgames.com/), a single player card game.
 
