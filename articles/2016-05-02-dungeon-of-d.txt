@@ -1,0 +1,16 @@
+---
+title: Dungeon of D
+date: 02/05/2016
+
+As a recent side project I've built an [HTML5 version of Dungeon of D](http://dod.dogwatchgames.com/), a single player card game.
+
+[Original Print & Play Game](http://www.jackdgames.com/free_games#mf_itemGuid.557a5ef00a7d22.3884731) by [Jack Darwid](http://www.jackdgames.com/).
+([Board Game Geek](https://boardgamegeek.com/boardgame/34639/dungeon-d))
+
+<strong>[Play It!](http://dod.dogwatchgames.com/)</strong>
+
+This will work on at least the iPad/iPhone and (up to date) desktop browsers. If you have an Android device please let me know if this works!
+
+[Source is also available](https://github.com/dmcinnes/DoD) for the curious.
+
+If you run into any bugs [please let me know](https://github.com/dmcinnes/DoD/issues)!
