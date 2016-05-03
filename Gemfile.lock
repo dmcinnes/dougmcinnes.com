@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/dmcinnes/toto.git
+  revision: 2bc0fba44ea3b6727b0e6fcbbb41e30f0e8de76d
+  branch: master
+  specs:
+    toto (0.4.9)
+      builder
+      rack
+      rdiscount
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -7,10 +17,6 @@ GEM
     rack (1.6.4)
     rdiscount (2.1.8)
     tilt (2.0.2)
-    toto (0.4.9)
-      builder
-      rack
-      rdiscount
 
 PLATFORMS
   ruby
@@ -19,7 +25,10 @@ DEPENDENCIES
   builder
   haml
   rdiscount
-  toto
+  toto!
+
+RUBY VERSION
+   ruby 2.3.1p112
 
 BUNDLED WITH
-   1.11.2
+   1.12.1
